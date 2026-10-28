@@ -14,7 +14,7 @@ Lab 2 builds directly on Lab 1. Complete Lab 1 fully before you start Lab 2.
 
 ## 📋 Lab Overview
 
-In this hands-on lab, you will explore how **Azure Document Intelligence**, **Azure AI Search**, and **Microsoft Foundry** can be used together to process and access business information. You train a custom Document Intelligence model, build a BPA pipeline that runs it on a batch of invoices, and index the extracted results in Azure AI Search. You then create a Foundry IQ knowledge base from that index, connect it to a Foundry agent, and chat with the agent about the invoices.
+In this hands-on lab, you will explore how **Azure Document Intelligence in Foundry Tools**, **Azure AI Search (Foundry IQ)**, and **Microsoft Foundry** can be used together to process and access business information. You train a custom Document Intelligence model, build a BPA pipeline that runs it on a batch of invoices, and index the extracted results in Azure AI Search. You then create a Foundry IQ knowledge base from that index, connect it to a Foundry agent, and chat with the agent about the invoices.
 
 ## 🎯 Lab Objectives
 
@@ -25,7 +25,7 @@ By the end of this lab you will be able to:
 
 ## ⚙️ Pre-requisites
 
-- Basic familiarity with Azure AI services and Microsoft Foundry.
+- Basic familiarity with Foundry Tools (formerly Azure AI services) and Microsoft Foundry.
 - A basic understanding of document processing and search concepts.
 
 ## 🏗️ Architecture
@@ -40,17 +40,17 @@ This architecture shows how Contoso's invoices move from raw files to answers in
 
 - **Data Sources:** Business documents such as PDFs, forms, and other files used for processing and analysis.
 - **Azure Storage:** Stores the documents and related data used by the document processing workflow.
-- **Azure Document Intelligence:** Custom model used to train and extract structured information from business documents (Lab 1).
-- **BPA Custom Model Pipeline:** Processes documents using the trained Document Intelligence custom model (Lab 1).
-- **Azure AI Search:** Indexes and makes processed document content searchable for efficient information retrieval (Lab 1).
-- **Microsoft Foundry:** Provides the knowledge and agent capabilities used to work with business data (Lab 2).
-- **Knowledge Source & Knowledge Base:** Organizes and provides business data as contextual knowledge for the Foundry Agent (Lab 2).
-- **Foundry Agent:** Uses the configured knowledge to respond to natural-language queries and retrieve relevant information (Lab 2).
-- **Foundry Agent Playground:** Provides an interactive interface for users to communicate with the Foundry Agent and explore information from their data (Lab 2).
+- **Azure Document Intelligence in Foundry Tools:** Custom template model used to train and extract structured information from business documents. It is part of Azure Content Understanding and was formerly called Form Recognizer.
+- **BPA Custom Model Pipeline:** Processes documents using the trained Document Intelligence custom model.
+- **AI Search (Foundry IQ):** Indexes and makes processed document content searchable for efficient information retrieval. It also provides the knowledge base layer for agentic retrieval.
+- **Microsoft Foundry:** Provides the knowledge and agent capabilities used to work with business data.
+- **Knowledge Source & Foundry IQ Knowledge Base:** The knowledge source connects to the document index. The knowledge base uses agentic retrieval to organize, rank, and return business data as grounded knowledge for the Foundry agent. One knowledge base can be shared by several agents.
+- **Foundry Agent (Foundry Agent Service):** Uses the configured knowledge to respond to natural-language queries and retrieve relevant information.
+- **Foundry Agent Playground:** Provides an interactive interface for users to communicate with the Foundry agent and explore information from their data.
 
 # 🚀 Getting Started with the lab
 
-We've prepared an immersive environment for you to explore how Azure Document Intelligence, Azure AI Search, and Microsoft Foundry work together to process business documents, make information searchable, and enable AI-powered interactions with your data. Let’s begin!
+We've prepared an immersive environment for you to explore how Azure Document Intelligence in Foundry Tools, Azure AI Search (Foundry IQ), and Microsoft Foundry work together to process business documents, make information searchable, and enable AI-powered interactions with your data. Let’s begin!
 
 ## Accessing Your Lab Environment
  
@@ -66,7 +66,7 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get the lab environment details, you can select the **Environment** tab. Additionally, the credentials will also be emailed to your registered email address.
 
- ![](./images/lab-env-new.png)
+ ![](./images/env.png)
  
 ## Utilizing the Split Window Feature
  
@@ -82,7 +82,7 @@ Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from
 
 ## Lab Guide Zoom In/Zoom Out
 
-To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+To adjust the zoom level for the environment page, click the **A↕** icon located next to the timer in the lab environment.
 
 ![Zoom In/Zoom Out](./images/size-new.png)  
 
@@ -127,7 +127,7 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
    ![](./images/new/GS8.png)
    
    
-> **[!Tip]**
+> **[Tip]**
 *For a smoother experience during the hands-on lab, it's important to thoroughly review both the instructions and the accompanying notes. This will help you navigate through the tasks with ease and confidence.*
 
 ## 📞 Support Contact
