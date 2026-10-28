@@ -149,9 +149,9 @@ In this task you upload six training images, label the company name on each, tra
 
    ![train-module](images/L1T2S5-0110.png)
 
-1. On the **Label data** page, after labeling all six documents **(1)**, click on **Train (2)** in the top right corner.
+1. On the **Label data** page, after labeling all six documents, click on **Train** in the top right corner.
 
-   ![Train](images/L1T2S5-0110.png)
+   ![Train](images/train.png)
 
 1. On the **Train a new model** page, specify the following details:
 
@@ -246,9 +246,9 @@ In this task you build a pipeline in the Business Process Automation (BPA) Accel
 
 1. Check that the invoices were uploaded. In the Azure portal, open the storage account **bpa{suffix} (1)** → **Containers (2)** → **documents (3)** → **workshop (4)**, and check that it contains the files **(5)**, **invoice1.jpg** to **invoice8.jpg**.
 
-   ![Check uploaded invoices](images/L1T3S14a-0110.png)
+   ![Check uploaded invoices](images/s1.png)
 
-   ![Check uploaded invoices](images/L1T3S14b-0110.png)
+   ![Check uploaded invoices](../images/s2.png)
 
    ![Check uploaded invoices](images/L1T3S14c-0110.png)
 
@@ -274,7 +274,7 @@ In this task you allow the Azure AI Search service to read the pipeline results 
 
 1. On the **Storage accounts** page, select the storage account named similar to **bpa{suffix}**.
 
-   ![Select storage account](images/task4-step2.png)
+   ![Select storage account](images/s3.png)
 
 1. On the left-side navigation menu, select **Access control (IAM)** **(1)**. Then click on **+ Add** **(2)** and select **Add role assignment** **(3)**.
 
@@ -308,11 +308,11 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
 1. Navigate back to the resource group page, select **Search service** with a name similar to **bpa{suffix}**.
 
-   ![search service](images/L1T5S1.png)
+   ![search service](images/s5.png)
 
 1. On the **Search service** page, click on **Import data**.
 
-   ![Data source](images/L1T5S2.png)
+   ![Data source](images/s6.png)
 
 1. Select **Azure Blob Storage (1)** as the data source and click on **Keyword Search (2)**.
   
@@ -329,7 +329,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
    - Parsing mode: **JSON (5)**.
    - Click **Next (6)**.
 
-       ![Connection to your data](images/L1T5S4.png)
+       ![Connection to your data](images/s7.png)
 
 1. Click **Next** on **Apply AI enrichment** screen.
 
@@ -406,9 +406,9 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
 1. In the search service, select **Indexers (1)** and open **azureblob-indexer-indexer (2)**. Select **Edit JSON (3)**.
 
-   ![](images/toplevel-step2.png)
+   ![](images/s8.png)
 
-   ![](images/toplevel-step2a.png)
+   ![](images/s9.png)
 
 1. Find the existing `"fieldMappings"` **(1)** list and add this entry inside it, before the first existing mapping and select **Save (3**):
 
@@ -424,7 +424,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
  
 1. On the indexer page, select **Reset (1)** and confirm, then select **Run (2)**.
 
-   ![](images/toplevel-step4.png)
+   ![](images/s10.png)
 
     > **Why reset:** the indexer remembers which files it has already processed. Without a reset, it skips all eight files and the new field stays empty.
 
@@ -438,7 +438,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
 1. Click on the **Add title field (4)** for **azureblob-indexer-semantic-configuration**.
 
-   ![](images/semantic-configuration1.png)
+   ![](images/s11.png)
 
    ![](images/semantic-configuration2.png)
 
@@ -469,7 +469,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
    ![](images/semantic-configuration5.png)
 
-1. Check that the US invoice for Northwind Traders is the first result.
+   >Check that the US invoice for Northwind Traders is the first result.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next  task. 
@@ -490,4 +490,4 @@ In this lab you:
 
 ### Now, click on **Next >>** from the lower right corner to move on to the next lab.
 
-![](../images/new/next.png)
+![](../images/np2.png)
