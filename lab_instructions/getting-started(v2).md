@@ -124,7 +124,7 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
    
 1. Verify the resources deployed in the resource group.
 
-   ![](./images/new/GS8.png)
+   ![](./images/rgnew.png)
    
    
 > **[Tip]**

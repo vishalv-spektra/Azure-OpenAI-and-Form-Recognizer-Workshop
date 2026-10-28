@@ -8,7 +8,7 @@ Contoso wants to stop reading invoices by hand. In this lab you build the proces
 
 ## 📖 Overview
 
-A custom Document Intelligence model learns to find the values your business cares about on its own document types. You label a few sample documents, train the model, and it can then extract those values from new documents. You need only five examples of the same form to start; this lab uses six training images and two test images.
+Azure Document Intelligence in Foundry Tools is part of Azure Content Understanding. A custom Document Intelligence model (here, a **custom template model**) learns to find the values your business cares about on its own document types. You label a few sample documents, train the model, and it can then extract those values from new documents. You need only five examples of the same form to start; this lab uses six training images and two test images.
 
 ## 🎯 Objectives
 
@@ -22,7 +22,7 @@ In this lab, you will complete the following tasks:
 
 ### Task 1: Creating an Azure Document Intelligence Resource
  
-In this task you create a custom extraction project in Azure Document Intelligence Studio, connect it to the lab's Azure AI services resource, and create a storage account to hold the training data.
+In this task you create a custom extraction project in Document Intelligence Studio, connect it to the lab's Foundry Tools multi-service resource (formerly Azure AI services), and create a storage account to hold the training data.
  
 > **Why:** A project groups everything the custom model needs in one place: the service that trains it and the storage that holds the labeled examples.
 
@@ -124,6 +124,8 @@ In this task you create a custom extraction project in Azure Document Intelligen
 In this task you upload six training images, label the company name on each, train the model, and test it on two images it has not seen.
  
 > **Why a custom model:** Use a prebuilt model when Document Intelligence already supports your document type (invoices, receipts, IDs). Use a custom model when your documents or the values you need are specific to your business. Here you train one to learn the skill of labeling and training; the same steps apply to any internal form.
+
+> **Template build mode:** The **Template** build mode trains a custom template model, which suits documents with a consistent layout, such as these invoices. Content Understanding *analyzers* are a different, LLM-powered feature of the same studio and are not used in this lab.
 
 1. On the **Label data** page of your custom extraction model project, click **Browse for files** to upload your sample documents.
 
@@ -298,7 +300,7 @@ In this task you allow the Azure AI Search service to read the pipeline results 
 
 ### Task 5: Configure Azure AI Search and Query the Index
 
-In this task you index the eight JSON result files in Azure AI Search, then make the full invoice text available as a top-level field with a semantic configuration. Lab 2's agent needs both to retrieve the invoices.
+In this task you index the eight JSON result files in Azure AI Search (Foundry IQ), then make the full invoice text available as a top-level field with a semantic configuration. Lab 2's agent needs both to retrieve the invoices.
  
 > **Why:** The pipeline stores each invoice's text deep inside nested JSON. Search can index nested data, but the Lab 2 knowledge base can only return plain top-level text fields. Without the extra steps in this task, the agent finds the invoices but cannot read them.
 
