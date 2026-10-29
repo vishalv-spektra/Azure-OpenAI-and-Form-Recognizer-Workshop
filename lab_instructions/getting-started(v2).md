@@ -4,9 +4,9 @@
 
 ## 📘 Lab Scenario
 
-Contoso Ltd. receives supplier and customer invoices in seven languages and layouts, from the US, Spain, Germany, France, Portugal, Italy and the Netherlands. Its finance team spends hours opening invoices one by one to answer simple questions such as "what is the total on invoice INV-2058?" or "what did we bill Müller & Partner?".
+Contoso Ltd. receives supplier and customer invoices in seven languages and layouts, from the US, Spain, Germany, France, Portugal, Italy, and the Netherlands. Its finance team spends hours opening invoices one by one to answer simple questions such as "What is the total on invoice INV-2058?" or "What did we bill Müller & Partner?"
  
-In this hands-on lab you act as a Cloud Consultant and build Contoso one end-to-end solution in two parts:
+In this hands-on lab, you act as a Cloud Consultant and build an end-to-end solution for Contoso in two parts:
  
 - **Lab 1** processes the invoices: a Document Intelligence model reads them, a Business Process Automation (BPA) pipeline runs them automatically, and Azure AI Search indexes the results.
 - **Lab 2** puts an AI agent on top: a Microsoft Foundry agent uses the Lab 1 search index as its knowledge, so the finance team can ask questions about the invoices in plain language.
@@ -18,7 +18,7 @@ In this hands-on lab, you will explore how **Azure Document Intelligence in Foun
 
 ## 🎯 Lab Objectives
 
-By the end of this lab you will be able to:
+By the end of this lab, you will be able to:
  
 - **Process business documents with Document Intelligence (Lab 1):** create a custom extraction project, label and train a model, run it in a BPA pipeline, grant Azure AI Search secure access to storage with a managed identity, and index and query the extracted invoice data.
 - **Ground an AI agent in your processed data (Lab 2):** create a knowledge base from the Lab 1 search index, connect it to a Foundry agent, and use the agent playground to answer questions about the invoices.
