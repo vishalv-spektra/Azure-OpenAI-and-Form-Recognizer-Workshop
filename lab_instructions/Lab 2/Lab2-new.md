@@ -50,7 +50,7 @@ In this task you connect Foundry to the lab's Azure AI Search (Foundry IQ) servi
 
 > **Note:** Some agentic retrieval options in the Azure and Foundry portals are still labeled **preview**. Labels and field names can change slightly between releases.
  
-> **Why:** a knowledge base is what the agent queries. It sends the question to its knowledge sources, ranks what comes back, and returns the most relevant content. The Lab 1 index is its only source here.
+> **Why:** A knowledge base is what the agent queries. It sends the question to its knowledge sources, ranks what comes back, and returns the most relevant content. The Lab 1 index is its only source here.
 
 1. From the left navigation pane, select **Knowledge (1)**, select the provisioned **Azure AI Search** resource from the **Foundry IQ resource** drop-down **(2)**, select **API Key  (3)** as the **Auth Type**, and then select **Connect (4)**.
 
@@ -79,7 +79,7 @@ In this task you connect Foundry to the lab's Azure AI Search (Foundry IQ) servi
 
    ![Save knowledge source](images/L2T2S5-0110.png)
 
-    > **Note:** the page says the index must have a semantic configuration. You set it up in Lab 1, Task 5.
+    > **Note:** The page says the index must have a semantic configuration. You set it up in Lab 1, Task 5.
 
 1. Check that **invoice-index-source** is listed with type **Azure AI Search Index** and status **Active**, then select **Save knowledge base**.
 
@@ -93,9 +93,9 @@ In this task you connect Foundry to the lab's Azure AI Search (Foundry IQ) servi
 
 In this task, you tell the knowledge source which fields to search, which to return, and which semantic configuration to use. These settings are set in the Azure portal, because the Foundry screen does not show them.
  
-> **Why:** without these settings, the knowledge source finds the right invoice but returns only its document ID. The agent then knows a matching invoice exists but cannot read what is on it.
+> **Why:** Without these settings, the knowledge source finds the right invoice but returns only its document ID. The agent then knows a matching invoice exists but cannot read what is on it.
  
-1. In the Azure portal, open the search service **bpa{suffix}** Select AI Seach (Foundry IQ).
+1. In the Azure portal, open the search service **bpa{suffix}**. Select AI Search (Foundry IQ).
 
 1. In the left menu, select **Knowledge sources (1)** and open **invoice-index-source (2)**.
 
@@ -130,13 +130,13 @@ In this task you create an agent and give it the knowledge base, so it retrieves
  
    ![Instructions](images/L2T4S3-0110.png)
 
-    > **Why:** instructions shape every answer. Telling the agent to use only the knowledge base, and to say when it finds nothing, stops it from inventing invoice numbers or totals.
+    > **Why:** Instructions shape every answer. Telling the agent to use only the knowledge base, and to say when it finds nothing, stops it from inventing invoice numbers or totals.
 
 1. Scroll to **Tools**. If **Web search** is listed, select its ellipsis **(…)** and remove it.
 
    ![Remove web search](images/L2T4S4-0110.png)
 
-   > **Why:** web search would let the agent answer from the internet. For this lab, every answer should come from Contoso's invoices.
+   > **Why:** Web search would let the agent answer from the internet. For this lab, every answer should come from Contoso's invoices.
 
 1. In the **Knowledge** section, select **Add (1)**, then **Connect to Foundry IQ (2)**.
 
@@ -178,7 +178,7 @@ In this task you ask the agent questions in the playground and check its answers
 
    > **Note:** The expected answer may or may not match the exact wording of the invoice, but it should be factually correct based on the invoice data.
 
-   > **Why the last prompt:** a grounded agent should admit when the data has no answer. If it invents a total, check that its instructions were saved.
+   > **Why the last prompt:** A grounded agent should admit when the data has no answer. If it invents a total, check that its instructions were saved.
 
 1. Under an answer, select **Traces**, then open the **knowledge_base_retrieve** step. Its output shows the invoice text the knowledge base returned for that question.
 
