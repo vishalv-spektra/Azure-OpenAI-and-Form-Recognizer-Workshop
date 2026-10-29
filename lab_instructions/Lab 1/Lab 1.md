@@ -4,7 +4,7 @@
 
 ## 📘 Scenario
 
-Contoso wants to stop reading invoices by hand. In this lab you build the processing half of the solution: a Document Intelligence model reads each invoice, a BPA pipeline runs the model on every uploaded file, and Azure AI Search indexes the results. In Lab 2, an AI agent will answer questions using this index, so everything you build here is used again.
+Contoso wants to stop reading invoices by hand. In this lab, you build the processing half of the solution: a Document Intelligence model reads each invoice, a BPA pipeline runs the model on every uploaded file, and Azure AI Search indexes the results. In Lab 2, an AI agent will answer questions using this index, so you can reuse everything you build here.
 
 ## 📖 Overview
 
@@ -62,7 +62,7 @@ In this task you create a custom extraction project in Document Intelligence Stu
 
    ![Alt text](../images/13062025(6).png)
 
-1. If asks to Sign in, use the same **ODL_User <inject key="Deployment ID" enableCopy="false"/>** to login used to login Azure.
+1. If asked to sign in, use the same **ODL_User <inject key="Deployment ID" enableCopy="false"/>** used to log in to Azure.
 
    ![Alt text](./images/L1T1S3.png)
 
@@ -178,7 +178,7 @@ In this task you upload six training images, label the company name on each, tra
 
    ![test-file-upload](./images/L1T2S11-0110.png)
 
-1. On the **Test model** page, Once uploaded, select **test2.jpeg (1)** model, and click on **Run analysis** **(2)**, Now you can see on the right-hand side that the model was able to detect the field **Organization_sample** **(3)** we created in the last step along with its confidence score(*may vary from screenshot)*.
+1. On the **Test model** page, Once uploaded, select **test2.jpeg (1)** model, and click on **Run analysis** **(2)**, Now you can see on the right-hand side that the model was able to detect the field **Organization_sample** **(3)** we created in the last step, along with its confidence score(*may vary from screenshot)*.
 
    ![Alt text](./images/L1T2S12-0110.png)
 
@@ -362,7 +362,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
    ![](images/upload-8-i.png)
 
-    > **Why facetable:** Facets let you group and count results by a value, for example how many invoices each organization issued.
+    > **Why facetable:** Facets let you group and count results by a value, for example, how many invoices each organization issued.
 
 
 1. Enter the following details in the Configure field
@@ -376,7 +376,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
 1. Scroll down and click on **Next**.
 
-   >**Note:** If any field with values as id is giving error, delete that field by clicking (...) ellipses icon  on the right side.
+   >**Note:** If any field with values as id is giving an error, delete that field by clicking the (...) ellipses icon  on the right side.
 
 1. On the Advanced settings screen, leave all fields as default and click **Next**.
     
@@ -402,7 +402,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
       ![](images/toplevel-step1a.png)
 
-    > **Why:** this field will hold each invoice's full text at the top level of the index, where the knowledge base can read it.
+    > **Why:** This field will hold each invoice's full text at the top level of the index, where the knowledge base can read it.
 
 1. In the search service, select **Indexers (1)** and open **azureblob-indexer-indexer (2)**. Select **Edit JSON (3)**.
 
@@ -418,7 +418,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
  
       ![](images/toplevel-step3.png)
 
-      > **Why:** A field mapping copies a value from the source file into an index field. The path points at the invoice text in each JSON file and copies it into the new `content` field.
+      > **Why:** A field mapping copies a value from the source file into an index field. The path points to the invoice text in each JSON file and copies it into the new `content` field.
    
       > **Important:** Add the line inside the existing list. Do not add a second `"fieldMappings"` section; the portal keeps only one, and your mapping would be lost.
  
@@ -426,7 +426,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
    ![](images/s10.png)
 
-    > **Why reset:** the indexer remembers which files it has already processed. Without a reset, it skips all eight files and the new field stays empty.
+    > **Why reset:** The indexer remembers which files it has already processed. Without a reset, it skips all eight files and the new field stays empty.
 
 1. Wait for the run to finish. In **Execution history**, check that it shows **8/8 succeeded**.
 
@@ -446,7 +446,7 @@ In this task you index the eight JSON result files in Azure AI Search (Foundry I
 
    ![](images/semantic-configuration3.png)
 
-    > **Why:** semantic ranking reorders search results by meaning, not just matching words. The Lab 2 knowledge base uses this configuration to find the most relevant invoices, so it must point at the field that holds the invoice text.
+    > **Why:** Semantic ranking reorders search results by meaning, not just matching words. The Lab 2 knowledge base uses this configuration to find the most relevant invoices, so it must point to the field that holds the invoice text.
 
 ### Query the index
 
