@@ -8,7 +8,7 @@ Contoso's invoices are now processed and indexed, but the finance team still has
 
 ## 📖 Overview
 
-You create a Foundry IQ knowledge base with the Lab 1 index as its knowledge source, tune which fields the knowledge source searches and returns, connect the knowledge base to a Foundry agent, and test the agent in the playground.
+You create a Foundry IQ knowledge base with the Lab 1 index as its knowledge source, tune which fields the knowledge source searches and returns, connect the knowledge base to a Foundry agent (built on Foundry Agent Service), and test the agent in the playground. The knowledge base uses agentic retrieval to find and rank the relevant invoices for each question.
  
 > **Why ground the agent:** A language model on its own knows nothing about Contoso's invoices and may invent an answer. Grounding makes the agent retrieve the relevant invoices first and answer only from them.
 
@@ -32,21 +32,23 @@ In this task, you will access the Microsoft Foundry portal through the provision
 
 2. On the Resource group page, search for and select the **Microsoft Foundry** resource with a name similar to **oaibpa{suffix}**.
 
-   ![Azure OpenAI](images/L2T1S2.png)
+   ![](images/a1.png)
 
 3. On the **Overview** tab of the Foundry resource, select **Go to Foundry portal**.
 
-   ![Go to Foundry portal](images/L2T1S3.png)
+   ![Go to Foundry portal](images/a2.png)
 
 4. On the **Microsoft Foundry** page, verify that the provisioned Foundry project is selected **(1)**. From the top navigation bar, select **Build (2)**.
 
    ![Microsoft Foundry](images/L2T1S4.png)
 
-   > **Note:** Ensure that you are working in the Foundry project provisioned for this lab.
+   > **Note:** Ensure that you are working in the Foundry project provisioned for this lab, and that the **New Foundry** toggle is on. This lab uses the new Foundry portal (Foundry classic is being retired), so the menus and Foundry IQ options match the steps below.
 
 ### Task 2: Create a knowledge base from the Lab 1 search index
 
-In this task you connect Foundry to the lab's Azure AI Search service and create a knowledge base whose knowledge source is the **azureblob-indexer** index from Lab 1.
+In this task you connect Foundry to the lab's Azure AI Search (Foundry IQ) service and create a Foundry IQ knowledge base whose knowledge source is the **azureblob-indexer** index from Lab 1.
+
+> **Note:** Some agentic retrieval options in the Azure and Foundry portals are still labeled **preview**. Labels and field names can change slightly between releases.
  
 > **Why:** a knowledge base is what the agent queries. It sends the question to its knowledge sources, ranks what comes back, and returns the most relevant content. The Lab 1 index is its only source here.
 
@@ -93,11 +95,11 @@ In this task, you tell the knowledge source which fields to search, which to ret
  
 > **Why:** without these settings, the knowledge source finds the right invoice but returns only its document ID. The agent then knows a matching invoice exists but cannot read what is on it.
  
-1. In the Azure portal, open the search service **bpa{suffix}**.
+1. In the Azure portal, open the search service **bpa{suffix}** Select AI Seach (Foundry IQ).
 
 1. In the left menu, select **Knowledge sources (1)** and open **invoice-index-source (2)**.
 
-   ![Knowledge source](images/L2T3S2-0110.png)
+   ![Knowledge source](images/a4.png)
 
 1. Expand **Advanced configurations** and set the following and click on **Save (4)**:
 
@@ -105,15 +107,15 @@ In this task, you tell the knowledge source which fields to search, which to ret
     - **Search fields:** `content` **(2)**. This is the field the question is matched against.
     - **Semantic configuration:** azureblob-indexer-semantic-configuration **(3)**. This ranks results by meaning.
 
-      ![Advanced configurations](images/L2T3S3-0110.png)
+      ![Advanced configurations](images/a5.png)
 
 ### Task 4: Create a Foundry agent and connect the knowledge base
 
 In this task you create an agent and give it the knowledge base, so it retrieves invoice content before it answers.
  
-1. Back to the Foundry portal, from the **Build (1)** page, select **Agents (2)**. Cilck **+ New agent (3)** then, **Build an agent (4)**.
+1. Back to the Foundry portal, from the **Build (1)** page, select **Agents (2)**. Click **+ New agent (3)** then, **Build an agent (4)**.
 
-   ![Agents](images/L2T4S1-0110.png) 
+   ![Agents](images/a6.png) 
 
    
 1. Enter **Name** `invoice-assistant` **(1)** and select **Create and open playground (2)**.
